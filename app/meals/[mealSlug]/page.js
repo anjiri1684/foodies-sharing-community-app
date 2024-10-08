@@ -27,7 +27,7 @@ export default function MealPage({ params }) {
       </header>
       <main>
         <p
-          className={instructions}
+          className={classes.instructions}
           dangerouslySetInnerHTML={{
             __html: meal.instructions,
           }}
