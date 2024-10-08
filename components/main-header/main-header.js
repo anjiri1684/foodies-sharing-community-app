@@ -1,41 +1,27 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
 import logo from "../../assets/logo.png";
 import classes from "./main-header.module.css";
 import MainHeaderBackground from "./main-header-background";
-import { usePathname } from "next/navigation";
+import NavLink from "./nav-link";
 
 export default function MainHeader() {
-  const path = usePathname();
-
   return (
     <>
       <MainHeaderBackground />
       <header className={classes.header}>
         <Link href="/" className={classes.logo}>
           <Image src={logo} alt="logo image" priority />
-          Nextlevel food
+          Nextlevel Food
         </Link>
         <nav className={classes.nav}>
           <ul>
             <li>
-              <Link
-                href="/meals"
-                className={path.startsWith("/meals") ? classes.active : ""}
-              >
-                Browse Meals
-              </Link>
+              <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <Link
-                href="/community"
-                className={path.startsWith("/community") ? classes.active : ""}
-              >
-                Foddies Community
-              </Link>
+              <NavLink href="/community">Foddies Community</NavLink>
             </li>
           </ul>
         </nav>
